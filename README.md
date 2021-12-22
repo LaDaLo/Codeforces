@@ -1,3 +1,3 @@
-# Codeforces
+# CP
 
 hello world
