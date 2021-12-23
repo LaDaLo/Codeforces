@@ -1,16 +1,16 @@
-# This is a sample Python script.
+mod = 1000000007
+def cal(n):
+    if n == 0:
+        return 1
+    elif n == 1:
+        return 10
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    tmp1 = cal(n // 2)
+    tmp2 = cal(n // 2 - 1)
+    if n % 2 == 0:
+        return tmp1 * tmp1 - tmp2 * tmp2
+    else:
+        tmp3 = cal(n // 2 + 1)
+        return tmp1 * (tmp3 - tmp2)
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(cal(10) % mod)
